@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.db_classes.Publishers" table="Publishers" schema="main">
+        <id name="pubId">
+            <column name="PUB_ID" sql-type="integer"/>
+        </id>
+        <property name="pubName">
+            <column name="PUB_NAME" sql-type="text(50)" length="50"/>
+        </property>
+        <property name="pubCountry">
+            <column name="PUB_COUNTRY" sql-type="text(70)" length="70" not-null="true"/>
+        </property>
+        <property name="pubAddress">
+            <column name="PUB_ADDRESS" sql-type="text(120)" length="120"/>
+        </property>
+    </class>
+</hibernate-mapping>

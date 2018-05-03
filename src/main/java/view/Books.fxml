@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView layoutX="41.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView layoutX="776.0" layoutY="31.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView layoutX="41.0" layoutY="288.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView layoutX="776.0" layoutY="293.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="41.0" layoutY="234.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="93.0" layoutY="234.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="776.0" layoutY="231.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="828.0" layoutY="231.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="41.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="776.0" layoutY="493.0" mnemonicParsing="false" text="Button" />
+      <Label layoutX="53.0" layoutY="14.0" text="auth" />
+      <TextField layoutX="390.0" layoutY="34.0" />
+      <TextField layoutX="390.0" layoutY="59.0" />
+      <TextField layoutX="390.0" layoutY="84.0" />
+      <Label layoutX="265.0" layoutY="38.0" text="fn" />
+      <Label layoutX="265.0" layoutY="63.0" text="ln" />
+      <Label layoutX="262.0" layoutY="88.0" text="country" />
+      <Label layoutX="256.0" layoutY="117.0" text="gender" />
+      <Label layoutX="263.0" layoutY="146.0" text="birth" />
+      <ChoiceBox layoutX="389.0" layoutY="113.0" prefWidth="150.0" />
+      <DatePicker layoutX="399.0" layoutY="142.0" prefHeight="25.0" prefWidth="131.0" />
+      <Label layoutX="39.0" layoutY="271.0" text="book" />
+      <TextField layoutX="390.0" layoutY="281.0" />
+      <TextField layoutX="390.0" layoutY="318.0" />
+      <Label layoutX="288.0" layoutY="285.0" text="name" />
+      <Label layoutX="294.0" layoutY="322.0" text="genre" />
+      <Label layoutX="295.0" layoutY="364.0" text="author" />
+      <TextField layoutX="390.0" layoutY="360.0" />
+      <Label layoutX="295.0" layoutY="401.0" text="publisher" />
+      <TextField layoutX="390.0" layoutY="397.0" />
+   </children>
+</Pane>

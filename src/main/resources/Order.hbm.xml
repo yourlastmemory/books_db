@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.db_classes.Order" table="Order" schema="main">
+        <id name="oBook">
+            <column name="O_BOOK" sql-type="integer"/>
+        </id>
+        <property name="oId">
+            <column name="O_ID" sql-type="integer"/>
+        </property>
+        <property name="oCustomerPhone">
+            <column name="O_CUSTOMER_PHONE" sql-type="text(18)" length="18"/>
+        </property>
+        <property name="oCustomerName">
+            <column name="O_CUSTOMER_NAME" sql-type="text(70)" length="70"/>
+        </property>
+        <property name="oDate">
+            <column name="O_DATE" sql-type="text(10)" length="10" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

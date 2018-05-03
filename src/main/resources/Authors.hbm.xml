@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.db_classes.Authors" table="Authors" schema="main">
+        <id name="authId">
+            <column name="AUTH_ID" sql-type="integer"/>
+        </id>
+        <property name="authFname">
+            <column name="AUTH_FNAME" sql-type="text(16)" length="16"/>
+        </property>
+        <property name="authLname">
+            <column name="AUTH_LNAME" sql-type="text(13)" length="13"/>
+        </property>
+        <property name="authGender">
+            <column name="AUTH_GENDER" sql-type="text(1)" length="1"/>
+        </property>
+        <property name="authCountry">
+            <column name="AUTH_COUNTRY" sql-type="text(50)" length="50" not-null="true"/>
+        </property>
+        <property name="authBirth">
+            <column name="AUTH_BIRTH" sql-type="text(10)" length="10" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

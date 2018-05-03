@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'local_db'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.8.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.0.Final'
+    compile group: 'org.hibernate', name: 'hibernate-annotations', version: '3.5.6-Final'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
+    compile group: 'org.ini4j', name: 'ini4j', version: '0.5.4'
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.4'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.21.0.1'
+
+}

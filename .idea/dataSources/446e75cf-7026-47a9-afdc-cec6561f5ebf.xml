@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Library.sqlite">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.8">
+    <root id="1">
+      <ServerVersion>3.20.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="Authors"/>
+    <table id="7" parent="2" name="Books"/>
+    <table id="8" parent="2" name="Order"/>
+    <table id="9" parent="2" name="Publishers"/>
+    <table id="10" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="11" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="12" parent="6" name="AUTH_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="13" parent="6" name="AUTH_FNAME">
+      <Position>2</Position>
+      <DataType>TEXT(16)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="6" name="AUTH_LNAME">
+      <Position>3</Position>
+      <DataType>TEXT(13)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="6" name="AUTH_GENDER">
+      <Position>4</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="6" name="AUTH_COUNTRY">
+      <Position>5</Position>
+      <DataType>TEXT(50)|0s</DataType>
+    </column>
+    <column id="17" parent="6" name="AUTH_BIRTH">
+      <Position>6</Position>
+      <DataType>TEXT(10)|0s</DataType>
+    </column>
+    <index id="18" parent="6" name="Authors_AUTH_ID_uindex">
+      <ColNames>AUTH_ID</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="6">
+      <ColNames>AUTH_ID</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>Authors_AUTH_ID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="20" parent="7" name="B_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="7" name="B_NAME">
+      <Position>2</Position>
+      <DataType>TEXT(125)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="7" name="B_GENRE">
+      <Position>3</Position>
+      <DataType>TEXT(40)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="7" name="B_AUTHOR">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="7" name="B_PRICE">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="7" name="B_PUBLISHER">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="26" parent="7" name="Books_B_ID_uindex">
+      <ColNames>B_ID</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="7">
+      <ColNames>B_ID</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>Books_B_ID_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="28" parent="7" name="Books___AUTH">
+      <ColNames>B_AUTHOR</ColNames>
+      <RefTableName>Authors</RefTableName>
+      <RefColNames>AUTH_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="7" name="Books___PUB">
+      <ColNames>B_PUBLISHER</ColNames>
+      <RefTableName>Publishers</RefTableName>
+      <RefColNames>PUB_ID</RefColNames>
+    </foreign-key>
+    <column id="30" parent="8" name="O_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="8" name="O_BOOK">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="8" name="O_CUSTOMER_PHONE">
+      <Position>3</Position>
+      <DataType>TEXT(18)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="8" name="O_CUSTOMER_NAME">
+      <Position>4</Position>
+      <DataType>TEXT(70)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="8" name="O_DATE">
+      <Position>5</Position>
+      <DataType>TEXT(10)|0s</DataType>
+    </column>
+    <index id="35" parent="8" name="Order_O_ID_uindex">
+      <ColNames>O_ID</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="8" name="Order_O_BOOK_uindex">
+      <ColNames>O_BOOK</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="8">
+      <ColNames>O_BOOK</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>Order_O_BOOK_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="38" parent="8" name="Order_Books_B_ID_fk">
+      <ColNames>O_BOOK</ColNames>
+      <RefTableName>Books</RefTableName>
+      <RefColNames>B_ID</RefColNames>
+    </foreign-key>
+    <column id="39" parent="9" name="PUB_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="9" name="PUB_NAME">
+      <Position>2</Position>
+      <DataType>TEXT(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="9" name="PUB_COUNTRY">
+      <Position>3</Position>
+      <DataType>TEXT(70)|0s</DataType>
+    </column>
+    <column id="42" parent="9" name="PUB_ADDRESS">
+      <Position>4</Position>
+      <DataType>TEXT(120)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="43" parent="9" name="Publishers_PUB_ID_uindex">
+      <ColNames>PUB_ID</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="9">
+      <ColNames>PUB_ID</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>Publishers_PUB_ID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="45" parent="10" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="46" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="47" parent="10" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="48" parent="10" name="rootpage">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="49" parent="10" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="50" parent="11" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="51" parent="11" name="seq">
+      <Position>2</Position>
+    </column>
+  </database-model>
+</dataSource>
