@@ -34,23 +34,6 @@ public class HibernateUtil {
         return sessionFactory;
     }
 
-    public static boolean setUser(String username, String password){
-
-        new StandardServiceRegistryBuilder()
-                .applySettings(configuration.getProperties());
-        try {
-            configuration.setProperty("hibernate.connection.password", password);
-            configuration.setProperty("hibernate.connection.username", username);
-            sessionFactory = configuration.buildSessionFactory();
-            System.out.println("OK");
-            return true;
-        }catch (Exception e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR,"Неправильный логин или пароль!!!", ButtonType.OK)
-                    .showAndWait();
-            return false;
-        }
-    }
     static {
 
         configuration.setProperty("hibernate.connection.driver_class", "org.sqlite.JDBC");
@@ -61,7 +44,9 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(Books.class);
         configuration.addAnnotatedClass(Orders.class);
         configuration.addAnnotatedClass(Publishers.class);
-        configuration.addAnnotatedClass(Authors.class);
+        configuration.addAnnotatedClass(Authors.class);new StandardServiceRegistryBuilder()
+                .applySettings(configuration.getProperties());
+        sessionFactory = configuration.buildSessionFactory();
     }
 
     private static SessionFactory getSessionFactory() {
@@ -82,6 +67,13 @@ public class HibernateUtil {
         getSession().clear();
         getSession().getTransaction().begin();
         getSession().saveOrUpdate(object);
+        getSession().getTransaction().commit();
+    }
+
+    public static void deleteObject(Savable object){
+        getSession().clear();
+        getSession().getTransaction().begin();
+        getSession().delete(object);
         getSession().getTransaction().commit();
     }
 

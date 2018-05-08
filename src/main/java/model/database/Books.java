@@ -14,6 +14,17 @@ public class Books implements Savable{
     private Publishers publishersByBPublisher;
     private Orders ordersByBId;
 
+    public Books(String bName, String bGenre, Double bPrice, Authors authorsByBAuthor, Publishers publishersByBPublisher) {
+        this.bName = bName;
+        this.bGenre = bGenre;
+        this.bPrice = bPrice;
+        this.authorsByBAuthor = authorsByBAuthor;
+        this.publishersByBPublisher = publishersByBPublisher;
+    }
+
+    public Books() {
+    }
+
     @Id
     @Column(name = "B_ID", nullable = false)
     public Short getbId() {

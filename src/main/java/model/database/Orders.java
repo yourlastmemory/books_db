@@ -11,6 +11,16 @@ public class Orders implements Savable{
     private String oDate;
     private Books booksByOBook;
 
+    public Orders(String oCustomerPhone, String oCustomerName, String oDate, Books booksByOBook) {
+        this.oCustomerPhone = oCustomerPhone;
+        this.oCustomerName = oCustomerName;
+        this.oDate = oDate;
+        this.booksByOBook = booksByOBook;
+    }
+
+    public Orders() {
+    }
+
     @Basic
     @Column(name = "O_ID", nullable = false)
     public Short getoId() {

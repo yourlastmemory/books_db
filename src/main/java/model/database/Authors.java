@@ -13,6 +13,17 @@ public class Authors implements Savable{
     private String authBirth;
     private Collection<Books> booksByAuthId;
 
+    public Authors(String authFname, String authLname, String authGender, String authCountry, String authBirth) {
+        this.authFname = authFname;
+        this.authLname = authLname;
+        this.authGender = authGender;
+        this.authCountry = authCountry;
+        this.authBirth = authBirth;
+    }
+
+    public Authors() {
+    }
+
     @Id
     @Column(name = "AUTH_ID", nullable = false)
     public Short getAuthId() {

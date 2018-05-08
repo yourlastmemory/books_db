@@ -11,6 +11,15 @@ public class Publishers implements Savable{
     private String pubAddress;
     private Collection<Books> booksByPubId;
 
+    public Publishers(String pubName, String pubCountry, String pubAddress) {
+        this.pubName = pubName;
+        this.pubCountry = pubCountry;
+        this.pubAddress = pubAddress;
+    }
+
+    public Publishers() {
+    }
+
     @Id
     @Column(name = "PUB_ID", nullable = false)
     public Short getPubId() {
