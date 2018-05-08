@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <ListView layoutX="41.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView layoutX="776.0" layoutY="31.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView layoutX="41.0" layoutY="288.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView layoutX="776.0" layoutY="293.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="41.0" layoutY="234.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="93.0" layoutY="234.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="776.0" layoutY="231.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="828.0" layoutY="231.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="41.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="776.0" layoutY="493.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="53.0" layoutY="14.0" text="auth" />
-      <TextField layoutX="390.0" layoutY="34.0" />
-      <TextField layoutX="390.0" layoutY="59.0" />
-      <TextField layoutX="390.0" layoutY="84.0" />
-      <Label layoutX="265.0" layoutY="38.0" text="fn" />
-      <Label layoutX="265.0" layoutY="63.0" text="ln" />
-      <Label layoutX="262.0" layoutY="88.0" text="country" />
-      <Label layoutX="256.0" layoutY="117.0" text="gender" />
-      <Label layoutX="263.0" layoutY="146.0" text="birth" />
-      <ChoiceBox layoutX="389.0" layoutY="113.0" prefWidth="150.0" />
-      <DatePicker layoutX="399.0" layoutY="142.0" prefHeight="25.0" prefWidth="131.0" />
-      <Label layoutX="39.0" layoutY="271.0" text="book" />
-      <TextField layoutX="390.0" layoutY="281.0" />
-      <TextField layoutX="390.0" layoutY="318.0" />
-      <Label layoutX="288.0" layoutY="285.0" text="name" />
-      <Label layoutX="294.0" layoutY="322.0" text="genre" />
-      <Label layoutX="295.0" layoutY="364.0" text="author" />
-      <TextField layoutX="390.0" layoutY="360.0" />
-      <Label layoutX="295.0" layoutY="401.0" text="publisher" />
-      <TextField layoutX="390.0" layoutY="397.0" />
+      <Label text="Книги" />
+      <ListView fx:id="lvBooks" prefHeight="178.0" prefWidth="150.0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="5" />
+      <Label text="Название" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Label text="Жанр" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Label text="Автор" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Label text="Издатель" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Label text="Цена" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <TextField fx:id="tfBookName" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <TextField fx:id="tfGenre" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <TextField fx:id="tfPrice" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <ChoiceBox fx:id="cbAuthor" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <ChoiceBox fx:id="cbPublisher" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#btnAddBook" prefWidth="70.0" text="Добавить" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" onAction="#btnRemoveBook" prefWidth="70.0" text="Удалить" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label text="Авторы" GridPane.rowIndex="7" />
+      <ListView fx:id="lvAuthors" prefHeight="178.0" prefWidth="150.0" GridPane.columnSpan="2" GridPane.rowIndex="8" GridPane.rowSpan="5" />
+      <Label text="Фамилия" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <Label text="Имя" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+      <Label text="Пол" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+      <Label prefHeight="34.0" prefWidth="60.0" text="Дата рождения" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+      <Label text="Страна" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+      <TextField fx:id="tfAuthorLastname" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+      <TextField fx:id="tfAuthorFirstname" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+      <TextField fx:id="tfAuthorCountry" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+      <ChoiceBox fx:id="cbGender" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+      <DatePicker fx:id="dpAuthorBirth" prefHeight="25.0" prefWidth="90.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+      <Label text="Издатели" GridPane.columnIndex="4" />
+      <ListView fx:id="lvPublishers" prefHeight="178.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="5" />
+      <Label text="Название" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+      <Label text="Страна" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+      <Label text="Адрес" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <TextField fx:id="tfPublisherName" prefWidth="90.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+      <TextField fx:id="tfPublisherCountry" prefWidth="90.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+      <TextField fx:id="tfPublisherAddress" prefWidth="90.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+      <Label text="Заказы" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+      <ListView fx:id="lvOrders" prefHeight="178.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="8" GridPane.rowSpan="5" />
+      <Label text="Покупатель" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+      <Label text="Телефон" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+      <Label text="Книга" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+      <TextField fx:id="tfCustomerName" prefWidth="90.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+      <TextField fx:id="tfCustomerPhone" prefWidth="90.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+      <ChoiceBox fx:id="cbBook" prefWidth="90.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+      <Button mnemonicParsing="false" onAction="#btnAddPublisher" prefWidth="70.0" text="Добавить" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" onAction="#btnRemovePublisher" prefWidth="70.0" text="Удалить" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" onAction="#btnAddAuthor" prefWidth="70.0" text="Добавить" GridPane.rowIndex="13" />
+      <Button mnemonicParsing="false" onAction="#btnRemoveAuthor" prefWidth="70.0" text="Удалить" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+      <Button mnemonicParsing="false" onAction="#btnAddOrder" prefWidth="70.0" text="Добавить" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+      <Button mnemonicParsing="false" onAction="#btnRemoveOrder" prefWidth="70.0" text="Удалить" GridPane.columnIndex="5" GridPane.rowIndex="13" />
    </children>
-</Pane>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

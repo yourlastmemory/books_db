@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="model.db_classes.Order" table="Order" schema="main">
+    <class name="model.database.Orders" table="Orders" schema="main">
         <id name="oBook">
             <column name="O_BOOK" sql-type="integer"/>
         </id>
@@ -20,5 +20,6 @@
         <property name="oDate">
             <column name="O_DATE" sql-type="text(10)" length="10" not-null="true"/>
         </property>
+        <one-to-one name="booksByOBook" class="model.database.Books"/>
     </class>
 </hibernate-mapping>

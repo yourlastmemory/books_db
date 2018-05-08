@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="model.db_classes.Publishers" table="Publishers" schema="main">
+    <class name="model.database.Publishers" table="Publishers" schema="main">
         <id name="pubId">
             <column name="PUB_ID" sql-type="integer"/>
         </id>
@@ -17,5 +17,11 @@
         <property name="pubAddress">
             <column name="PUB_ADDRESS" sql-type="text(120)" length="120"/>
         </property>
+        <set name="booksByPubId" inverse="true">
+            <key>
+                <column name="B_PUBLISHER"/>
+            </key>
+            <one-to-many not-found="ignore" class="model.database.Books"/>
+        </set>
     </class>
 </hibernate-mapping>

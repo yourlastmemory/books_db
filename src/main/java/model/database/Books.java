@@ -1,18 +1,18 @@
-package model.db_classes;
+package model.database;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Books {
+public class Books implements Savable{
     private Short bId;
     private String bName;
     private String bGenre;
     private Short bAuthor;
     private Double bPrice;
     private Short bPublisher;
+    private Authors authorsByBAuthor;
+    private Publishers publishersByBPublisher;
+    private Orders ordersByBId;
 
     @Id
     @Column(name = "B_ID", nullable = false)
@@ -100,5 +100,34 @@ public class Books {
         result = 31 * result + (bPrice != null ? bPrice.hashCode() : 0);
         result = 31 * result + (bPublisher != null ? bPublisher.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "B_AUTHOR", referencedColumnName = "AUTH_ID", nullable = false)
+    public Authors getAuthorsByBAuthor() {
+        return authorsByBAuthor;
+    }
+
+    public void setAuthorsByBAuthor(Authors authorsByBAuthor) {
+        this.authorsByBAuthor = authorsByBAuthor;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "B_PUBLISHER", referencedColumnName = "PUB_ID", nullable = false)
+    public Publishers getPublishersByBPublisher() {
+        return publishersByBPublisher;
+    }
+
+    public void setPublishersByBPublisher(Publishers publishersByBPublisher) {
+        this.publishersByBPublisher = publishersByBPublisher;
+    }
+
+    @OneToOne(mappedBy = "booksByOBook")
+    public Orders getOrdersByBId() {
+        return ordersByBId;
+    }
+
+    public void setOrdersByBId(Orders ordersByBId) {
+        this.ordersByBId = ordersByBId;
     }
 }

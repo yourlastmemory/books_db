@@ -9,13 +9,15 @@
         <property name="hibernate.connection.url">jdbc:sqlite:Library.sqlite</property>
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-        <mapping class="model.db_classes.Authors"/>
+
+        <mapping class="model.database.Authors"/>
+        <mapping class="model.database.Orders"/>
+        <mapping class="model.database.Publishers"/>
+        <mapping class="model.database.Books"/>
+
         <mapping resource="Authors.hbm.xml"/>
-        <mapping class="model.db_classes.Books"/>
-        <mapping resource="Books.hbm.xml"/>
-        <mapping class="model.db_classes.Order"/>
-        <mapping resource="Order.hbm.xml"/>
-        <mapping class="model.db_classes.Publishers"/>
         <mapping resource="Publishers.hbm.xml"/>
+        <mapping resource="Books.hbm.xml"/>
+        <mapping resource="Orders.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

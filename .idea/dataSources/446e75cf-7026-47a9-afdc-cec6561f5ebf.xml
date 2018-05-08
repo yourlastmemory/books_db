@@ -13,7 +13,7 @@
     <collation id="5" parent="1" name="RTRIM"/>
     <table id="6" parent="2" name="Authors"/>
     <table id="7" parent="2" name="Books"/>
-    <table id="8" parent="2" name="Order"/>
+    <table id="8" parent="2" name="Orders"/>
     <table id="9" parent="2" name="Publishers"/>
     <table id="10" parent="2" name="sqlite_master">
       <System>1</System>

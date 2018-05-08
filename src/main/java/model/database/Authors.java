@@ -1,18 +1,17 @@
-package model.db_classes;
+package model.database;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
-public class Authors {
+public class Authors implements Savable{
     private Short authId;
     private String authFname;
     private String authLname;
     private String authGender;
     private String authCountry;
     private String authBirth;
+    private Collection<Books> booksByAuthId;
 
     @Id
     @Column(name = "AUTH_ID", nullable = false)
@@ -100,5 +99,14 @@ public class Authors {
         result = 31 * result + (authCountry != null ? authCountry.hashCode() : 0);
         result = 31 * result + (authBirth != null ? authBirth.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "authorsByBAuthor")
+    public Collection<Books> getBooksByAuthId() {
+        return booksByAuthId;
+    }
+
+    public void setBooksByAuthId(Collection<Books> booksByAuthId) {
+        this.booksByAuthId = booksByAuthId;
     }
 }

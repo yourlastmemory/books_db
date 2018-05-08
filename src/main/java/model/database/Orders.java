@@ -1,17 +1,15 @@
-package model.db_classes;
+package model.database;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Order {
+public class Orders implements Savable{
     private Short oId;
     private Short oBook;
     private String oCustomerPhone;
     private String oCustomerName;
     private String oDate;
+    private Books booksByOBook;
 
     @Basic
     @Column(name = "O_ID", nullable = false)
@@ -68,15 +66,15 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Order order = (Order) o;
+        Orders orders = (Orders) o;
 
-        if (oId != null ? !oId.equals(order.oId) : order.oId != null) return false;
-        if (oBook != null ? !oBook.equals(order.oBook) : order.oBook != null) return false;
-        if (oCustomerPhone != null ? !oCustomerPhone.equals(order.oCustomerPhone) : order.oCustomerPhone != null)
+        if (oId != null ? !oId.equals(orders.oId) : orders.oId != null) return false;
+        if (oBook != null ? !oBook.equals(orders.oBook) : orders.oBook != null) return false;
+        if (oCustomerPhone != null ? !oCustomerPhone.equals(orders.oCustomerPhone) : orders.oCustomerPhone != null)
             return false;
-        if (oCustomerName != null ? !oCustomerName.equals(order.oCustomerName) : order.oCustomerName != null)
+        if (oCustomerName != null ? !oCustomerName.equals(orders.oCustomerName) : orders.oCustomerName != null)
             return false;
-        if (oDate != null ? !oDate.equals(order.oDate) : order.oDate != null) return false;
+        if (oDate != null ? !oDate.equals(orders.oDate) : orders.oDate != null) return false;
 
         return true;
     }
@@ -89,5 +87,15 @@ public class Order {
         result = 31 * result + (oCustomerName != null ? oCustomerName.hashCode() : 0);
         result = 31 * result + (oDate != null ? oDate.hashCode() : 0);
         return result;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "O_BOOK", referencedColumnName = "B_ID", nullable = false)
+    public Books getBooksByOBook() {
+        return booksByOBook;
+    }
+
+    public void setBooksByOBook(Books booksByOBook) {
+        this.booksByOBook = booksByOBook;
     }
 }

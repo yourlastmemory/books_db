@@ -1,16 +1,15 @@
-package model.db_classes;
+package model.database;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
-public class Publishers {
+public class Publishers implements Savable{
     private Short pubId;
     private String pubName;
     private String pubCountry;
     private String pubAddress;
+    private Collection<Books> booksByPubId;
 
     @Id
     @Column(name = "PUB_ID", nullable = false)
@@ -74,5 +73,14 @@ public class Publishers {
         result = 31 * result + (pubCountry != null ? pubCountry.hashCode() : 0);
         result = 31 * result + (pubAddress != null ? pubAddress.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "publishersByBPublisher")
+    public Collection<Books> getBooksByPubId() {
+        return booksByPubId;
+    }
+
+    public void setBooksByPubId(Collection<Books> booksByPubId) {
+        this.booksByPubId = booksByPubId;
     }
 }

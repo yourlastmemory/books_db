@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="model.db_classes.Authors" table="Authors" schema="main">
+    <class name="model.database.Authors" table="Authors" schema="main">
         <id name="authId">
             <column name="AUTH_ID" sql-type="integer"/>
         </id>
@@ -23,5 +23,11 @@
         <property name="authBirth">
             <column name="AUTH_BIRTH" sql-type="text(10)" length="10" not-null="true"/>
         </property>
+        <set name="booksByAuthId" inverse="true">
+            <key>
+                <column name="B_AUTHOR"/>
+            </key>
+            <one-to-many not-found="ignore" class="model.database.Books"/>
+        </set>
     </class>
 </hibernate-mapping>
